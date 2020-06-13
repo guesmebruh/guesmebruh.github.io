@@ -6,6 +6,8 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.css">
+	  <link rel="stylesheet" href="slick-theme.css">
+	  <link rel="stylesheet" href="slick.css">
 	  <style type="text/css">
 	  	body{
 	  		overflow: hidden;
@@ -13,6 +15,20 @@
 	  		width: 100%;
 	  		height: 100vh;
 	  	}
+
+		.forgetyou{
+			padding-left: 18%;
+			padding-top: 5px;
+			
+		}
+
+		.tombol{
+			top: 70%;
+			padding-left: 38%;
+			padding-top: 15%;
+		}
+
+
 	  	.bg{
 	  		width: 100%;
 	  		height: 100vh;
@@ -258,6 +274,7 @@
    					transform : rotate(135deg);
 		}
 		
+		
   		.pengembang{
   			position: absolute;
   			font-size: 10px;
@@ -401,6 +418,17 @@
 				<p id="quotation"></p>
 				<p id="source"></p>
 			</div>
+
+			
+			<div class="forgetyou" id="gambargw" style="display: none;">
+			<div><img src="1.jpeg"></div>
+			<div><img src="2.jpeg"></div>
+			<div><img src="3.jpeg"></div>
+			</div>
+
+			
+
+
 			<ul class="kotak">
 				<li></li>
 				<li></li>
@@ -417,7 +445,13 @@
 			<div class="jam" id="time">
 				00:00:00
 			</div>
+			
+	
 			<div class="ucapan" id="quote" onclick="play()"></div>
+			<div class="tombol">
+				<button class="btn1" onclick="TestsFunction()">Hide Message</button>
+				<button class="btn2" onclick="TestsFunction()">Show Message</button>
+				</div>
 			<div class="note" >ngeng</div>
 			<div class="pengembang">Andika Sujanadi</div>
 		</div>
@@ -426,7 +460,18 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="slick.js"></script>
+		<script src="slick.min.js"></script>
+		
 		<script type="text/javascript">
+			function TestsFunction() {
+    	var T = document.getElementById("gambargw");
+    	T.style.display = "block";  // <-- Set it to block
+}
+			
+			
+			
 			gaming=false;
 			tombol=false;
 			function init(){
@@ -1012,20 +1057,12 @@
 			}
 
 			const quotes = [
-			  {
-			    "quote": "I Really Missing U",
-			    "source": "Hollaaa46"
-			  },
-			  {
+			{
 			    "quote": "Just Believe, I'll Never Ever Forget !",
 			    "source": "Holaaa46"
 			  },
 			  {
 			    "quote": "I Wish you happiness forever",
-			    "source": "Holaaa46"
-			  },
-			  {
-			    "quote": "Hey U. Love U :* ",
 			    "source": "Holaaa46"
 			  },
 			  {
@@ -1053,7 +1090,7 @@
 			    "source": "Holaaa46"
 			  },
 			]
-			setInterval(randomQuote, 60000);
+			setInterval(randomQuote, 10000);
 			function randomQuote(){
 			  let random = quotes[Math.floor(Math.random() * quotes.length)];
 			  quotation.innerText = `"${random.quote}"`;
@@ -1177,5 +1214,28 @@ function play() {
 }
 
 </script>
+
+
+<script>
+	$(document).ready(function(){
+	  $(".btn1").click(function(){
+		$(".forgetyou").slideUp();
+	  });
+	  $(".btn2").click(function(){
+		$(".forgetyou").slideDown();
+	  });
+	});
+	</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$('.forgetyou').slick({
+	dots: true,
+	infinite: true,
+	speed: 500,
+	fade: true,
+	cssEase: 'linear'
+	});
+	});
+  </script>
 	</body>
 </html>
