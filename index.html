@@ -450,7 +450,7 @@
 			<div class="ucapan" id="quote" onclick="play()"></div>
 			<div class="tombol">
 				<button class="btn1" onclick="TestsFunction()">Hide Message</button>
-				<button class="btn2" onclick="TestsFunction()">Show Message</button>
+				<button class="btn2" onclick="TestsFunction(); play1()">Show Message</button>
 				</div>
 			<div class="note" >ngeng</div>
 			<div class="pengembang">Andika Sujanadi</div>
@@ -1211,6 +1211,12 @@ function check()
 function play() {
   var audio = new Audio('https://guesmebruh.podbean.com/mf/play/4w9qqm/bestpart.mp3');
   audio.play();
+}
+
+
+function play1() {
+  var audio1 = new Audio('https://guesmebruh.podbean.com/mf/play/lw44qo/All_I_Ask_ayyhj.mp3');
+  audio.play1();
 }
 
 </script>
